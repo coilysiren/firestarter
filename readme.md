@@ -1,4 +1,4 @@
-# (( PROJECT CODENAME: FireStart ))
+# (( PROJECT CODENAME: FireStarter ))
 
 Start a flask site really fast!
 
