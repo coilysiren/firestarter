@@ -22,7 +22,7 @@ import flask.ext.scss
 
 app = flask.Flask(__name__, static_folder='static', static_url_path='')
 app.config.from_object(__name__)
-for key, value in yaml.load(file('../config/config.yaml','r')).items():
+for key, value in yaml.load(file('../config.yaml','r')).items():
     app.config[key] = value
 
 
@@ -37,6 +37,7 @@ def index ():
         page_title=app.config['SITENAME'],
         page_desc=app.config['DESC'],
         post_urls=['',])
+
 @app.route('/static/<path:filename>')
 def base_static(filename):
     return flask.send_from_directory(app.root_path + '/static/', filename)
