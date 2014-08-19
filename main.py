@@ -15,11 +15,11 @@ import yaml
 import flask
 import flask.ext.scss
 # custom
-from scripts import scripts
+from scripts import cms
 
 # shortcuts
 render = flask.render_template
-build = scripts.build_html
+build = cms.build_html
 
 # start app and set configuration
 app = flask.Flask(__name__, static_folder='static', static_url_path='')
