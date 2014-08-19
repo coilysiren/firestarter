@@ -1,0 +1,34 @@
+<!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{{ page_title }}{% endblock %}</title>
+    <meta name="description" content="{% block desc %}{{ page_desc }}{% endblock %}">
+<!-- facebook / opengraph -->
+    <meta property="og:title" content="{{ self.title() }}"/>
+    <meta property="og:description" content="{{ self.desc() }}"/>
+    <meta property="og:image" content="{{ config.AVATAR }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ config.URL }}"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="160"/>
+    <meta property="og:image:height" content="160"/>
+<!-- twitter cards -->
+    <meta name="twitter:title" content="{{ self.title() }}">
+    <meta name="twitter:description" content="{{ self.desc() }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lynnmagic">
+    <meta name="twitter:creator" content="@lynnmagic">
+    <meta name="twitter:image:src" content="{{ config.AVATAR }}">
+    <meta name="twitter:domain" content="{{ config.URL }}">
+<!-- resources -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Press+Start+2P" rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
