@@ -1,0 +1,21 @@
+# config.yaml
+# possible to add any thing you want, then import it in the HTML
+# with {{ config.THING_TO_IMPORT }}
+
+# your name
+NAME: "Lynn Cyrin"
+
+# link to an avatar, then a description of it (for accessibility!)
+AVATAR: "http://www.gravatar.com/avatar/b1cde28ce033c8cd6f4be4059efbe00b.png?size=160"
+AVATAR_DESC: "my gravatar picture"
+
+# name, description, and url of website
+SITENAME: "Lynn Blog"
+DESC: "The blog of a Queer, Feminist, Programmer - Lynn Cyrin"
+URL: "http://lynncyrin.me"
+
+# Do you have this? True or False (case sensitive)
+# If you set this option to true, be sure to go input your information!
+GOOGLE_ANALYTICS: False # inside web-app/templates/analytics.html
+TWITTER_CARDS: False # inside web-app/templates/head.html
+FACEBOOK_OPENGRAPH: False # inside web-app/templates/head.html
