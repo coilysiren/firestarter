@@ -29,28 +29,28 @@ for key, value in yaml.load(file('config/config.yaml','r')).items():
 
 # Views! i.e. what the user gets when they type in our url
 
-# index is special because its path can be blank
+# the homepage is special because it reads in the readme
 @app.route('/')
 def index ():
-    return render('post.html', html_content=build("index"))
+    return render('post.html', html_content=build("readme"))
 
-# 404 is special because it needs @app.errorhandler(404)
-@app.errorhandler(404)
-def page_not_found (e):
-    return render('post.html', html_content=build("404"))
-
-# every other path does markdown -> html
+# every other path reads from paths/<url_input>
+# ex: website.com/cats -> firestarter/paths/cats
 @app.route('/<path>')
 def dynamic_path(path):
-    # check if path exists, if not 404
+    # frist check that path is empty, if so then 404
     if len(glob.glob('paths/'+path+'*')) == 0: return page_not_found(404)
-    # otherwise, build it!
-    return render('post.html', html_content=build(path))
+    return render('post.html', html_content=build("paths/"+path))
 
 # except for /static/* in which case we render the file itself
 @app.route('/static/<path:filename>')
 def base_static(filename):
     return flask.send_from_directory(app.root_path + '/static/', filename)
+
+# 404 is special because it needs @app.errorhandler(404)
+@app.errorhandler(404)
+def page_not_found (e):
+    return render('post.html', html_content=build("paths/404"))
 
 # debug mode start options
 
