@@ -29,7 +29,13 @@ for key, value in yaml.load(file('config/config.yaml','r')).items():
 
 # Views! i.e. what the user gets when they type in our url
 
-# the homepage is special because it reads in the readme
+# the homepage is special because its path is empty.
+#
+# if you are actually launching a website you probably want to change
+#     return render('post.html', html_content=build("readme"))
+# to
+#     return render('post.html', html_content=build("paths/index"))
+#
 @app.route('/')
 def index ():
     return render('post.html', html_content=build("readme"))

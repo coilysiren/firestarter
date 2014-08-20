@@ -2,16 +2,13 @@
 # possible to add any thing you want, then import it in the HTML
 # with {{ config.THING_TO_IMPORT }}
 
-# your name
-NAME: "Lynn Cyrin"
-
-# link to an avatar, then a description of it (for accessibility!)
-AVATAR: "http://www.gravatar.com/avatar/b1cde28ce033c8cd6f4be4059efbe00b.png?size=160"
-AVATAR_DESC: "my gravatar picture"
+# link to an avatar, then a description of it
+AVATAR: "http://website.com/a_picture_of_something.jpg"
+AVATAR_DESC: "my picture"
 
 # name, description, and url of website
-SITENAME: "Lynn Blog"
-DESC: "The blog of a Queer, Feminist, Programmer - Lynn Cyrin"
+SITENAME: "FireStarter"
+DESC: "Start a flask site really fast! Like, super fast!!!"
 URL: "http://lynncyrin.me"
 
 # Do you have this? True or False (case sensitive)
