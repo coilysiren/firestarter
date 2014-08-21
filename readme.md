@@ -36,7 +36,7 @@ At which point, you can now run the website!
 
     $ python main.py
 
-Then you head on over to [localhost:5000](http://localhost:5000) to see... the same readme that you are currently reading! Except in website form!!!
+Then head your browser over to [http://localhost:5000](http://localhost:5000) to see... the same readme that you are currently reading! Except in website form!!!
 
 Now if you want to turn this into something live on the internet that other people can see, I reccomend pushing the code to [heroku dot com](https://heroku.com). You would first need to create a (free) account and then give heroku your SSH key, a guide for which exists [here](https://devcenter.heroku.com/articles/keys).
 
@@ -45,7 +45,7 @@ Now if you want to turn this into something live on the internet that other peop
     $ git push heroku
     $ heroku open
 
-At which point you should see <adjective><verb>.herokuapp.com pop up in your browser and display... this readme! Hopefully!!! Because if so that then that means you are now the proud owner of a website on the internet - even if that website is simply a guide on how to make this website ~
+At which point you should see (adjective)(noun).herokuapp.com pop up in your browser and display... this readme! Hopefully!!! Because if so that then that means you are now the proud owner of a website on the internet - even if that website is simply a guide on how to make this website ~
 
 ## Advanced tactics: Project Structure
 
