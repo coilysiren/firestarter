@@ -23,8 +23,8 @@ This text assumes:
 
 First you obtain the code by running on command line
 
-    $ git clone git@github.com:LynnCo/firestart.git
-    $ cd firestart
+    $ git clone git@github.com:LynnCo/firestarter.git
+    $ cd firestarter
 
 Then install the packages that the project depeneds on. Right before you install the packages though, you should (but are not required to) initialize a virtualenv(ironment) and start it. Then you use pip to install all the project requirements.
 
@@ -114,4 +114,3 @@ Here are some examples of things I am doing with a website framework such as thi
 * Perform gay twitter analytics
 * Create a funding community
 * Act as an organizing point for a QueerTrans collective
-*
