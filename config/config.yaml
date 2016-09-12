@@ -14,5 +14,4 @@ URL: "http://lynncyrin.me"
 # Do you have this? True or False (case sensitive)
 # If you set this option to true, be sure to go input your information!
 GOOGLE_ANALYTICS: False # inside web-app/templates/analytics.html
-TWITTER_CARDS: False # inside web-app/templates/head.html
-FACEBOOK_OPENGRAPH: False # inside web-app/templates/head.html
+OPENGRAPH: True # inside web-app/templates/head.html
