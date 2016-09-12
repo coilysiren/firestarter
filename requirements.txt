@@ -1,15 +1,5 @@
-Flask==0.10.1
-Flask-Scss==0.3
-Jinja2==2.7.2
-Markdown==2.4
-MarkupSafe==0.19
-PyYAML==3.11
-Werkzeug==0.9.4
-argparse==1.2.1
-boto==2.29.1
-gunicorn==18.0
-itsdangerous==0.24
-pyScss==1.2.0.post3
-requests==0.13.2
-six==1.6.1
-wsgiref==0.1.2
+Flask >= 0.11
+gunicorn >= 19
+Markdown >= 2.6
+PyYAML >= 3.12
+Flask-Scss >= 0.5
