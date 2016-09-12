@@ -13,7 +13,7 @@ import glob
 # external
 import yaml
 import flask
-import flask.ext.scss
+import flask_scss
 # custom
 from scripts import cms
 
@@ -62,5 +62,5 @@ def page_not_found (e):
 
 if __name__ == '__main__':
     app.config['DEBUG'] = True
-    flask.ext.scss.Scss(app)
+    flask_scss.Scss(app)
     app.run()
