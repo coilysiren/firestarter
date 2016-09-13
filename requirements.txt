@@ -5,3 +5,4 @@ Flask-Scss >= 0.5
 Flask-Misaka
 python-dotenv
 cryptography
+twython

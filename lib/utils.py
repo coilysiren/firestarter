@@ -1,9 +1,12 @@
+# internal
+from os import environ as ENV
 # external
 import yaml
 import dotenv
 import flask_misaka
 import flask_scss
-
+import twython
+from twython import Twython
 
 def read_file(file_name):
     with open(file_name, 'r') as readme_file:
@@ -21,3 +24,11 @@ def setup(app):
     # extensions
     flask_misaka.Misaka(app)
     flask_scss.Scss(app, static_dir='static', asset_dir='static')
+
+    # twitter api
+    app.twitter = twython.Twython(
+        ENV["consumer_key"],
+        ENV["consumer_secret"],
+        ENV["access_token"],
+        ENV["access_token_secret"]
+    )

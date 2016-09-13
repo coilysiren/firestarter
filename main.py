@@ -15,7 +15,7 @@ utils.setup(app)
 
 @app.route('/')
 def index ():
-    return flask.render_template('index.html')
+    return flask.render_template('index.html', twitter=app.twitter)
 
 @app.route('/example')
 def example_route():
