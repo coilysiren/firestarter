@@ -30,11 +30,11 @@ with open('config/config.yaml','r') as config_file:
 
 # Views! i.e. what the user gets when they type in our url
 
-# the homepage is special because its path is empty.
+# the index page is special because its path is empty.
 #
-# if you are actually launching a website you probably want to change
+# The first thing you will want to do is change this
 #     return render('post.html', html_content=build("readme"))
-# to
+# to this
 #     return render('post.html', html_content=build("paths/index"))
 #
 @app.route('/')
@@ -58,8 +58,6 @@ def base_static(filename):
 @app.errorhandler(404)
 def page_not_found (e):
     return render('post.html', html_content=build("paths/404"))
-
-# debug mode start options
 
 if __name__ == '__main__':
     flask_scss.Scss(app)
