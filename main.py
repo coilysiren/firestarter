@@ -49,11 +49,6 @@ def dynamic_path(path):
     if len(glob.glob('paths/'+path+'*')) == 0: return page_not_found(404)
     return render('post.html', html_content=build("paths/"+path))
 
-# except for /static/* in which case we render the file itself
-@app.route('/static/<path:filename>')
-def base_static(filename):
-    return flask.send_from_directory(app.root_path + '/static/', filename)
-
 # 404 is special because it needs @app.errorhandler(404)
 @app.errorhandler(404)
 def page_not_found (e):
