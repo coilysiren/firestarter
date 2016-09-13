@@ -52,6 +52,8 @@ At which point you should see (adjective)(noun).herokuapp.com pop up in your bro
 
 ## Advanced tactics: Project Structure
 
+**Everything beyond this point is out of date**
+
     .venv/
     config/
     static/
