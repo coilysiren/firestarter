@@ -12,7 +12,7 @@ from scripts import cms
 build = cms.build_html
 
 # start app and set configuration
-app = flask.Flask(__name__, static_folder='static', static_url_path='')
+app = flask.Flask(__name__, static_folder='static', static_url_path='/static')
 app.config.from_object(__name__)
 with open('config/config.yaml','r') as config_file:
     for key, value in yaml.load(config_file).items():
