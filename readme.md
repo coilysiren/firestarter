@@ -57,6 +57,7 @@ At which point you should see `(adjective)(noun).herokuapp.com` pop up in your b
     .venv/
     lib/
     requirements.txt
+    runtime.txt
     config.yaml
     .gitignore
     readme.md
@@ -124,8 +125,11 @@ The `templates/partials/` contains re-usable parts of your website - such as a n
 The "base" templates directory (ie. where `templates/index.html`) lives is usually where I put "endpoint" templates. That is, the primary templates you point to in order to render a page, such as `about.html`, `contact.html`, etc.
 
     Procfile
+    runtime.txt
 
 The `Procfile` (which purposefully has no file extension) is used by [Heroku](https://devcenter.heroku.com/articles/procfile) to help run your website on a serious mode server. The commands in your `Procfile` are what Heroku will use to run your application, and generally `$ python main.py` is what you will be using.
+
+`runtime.txt` tells Heroku what version of Python you will be using
 
     readme.md
 
