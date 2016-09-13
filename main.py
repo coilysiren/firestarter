@@ -5,6 +5,8 @@ import yaml
 import flask
 import flask_scss
 import flask_misaka
+# local
+from lib import utils
 
 
 # start app and set configuration
@@ -18,9 +20,8 @@ with open('config.yaml','r') as config_file:
 # this renders the readme as the index page...
 @app.route('/')
 def index ():
-    with open('readme.md', 'r') as readme_file:
-        content = readme_file.read()
-    return flask.render_template('partials/base.html', content=content)
+    return flask.render_template('partials/base.html',
+        content=utils.read_file("readme.md"))
 
 # ...but this is the index page view you probably want
 # @app.route('/')

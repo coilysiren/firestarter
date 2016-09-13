@@ -80,13 +80,13 @@ Configurations go in here. Please do edit this file! If you dont the internet wi
 
 404 and index are in here as examples!
 
-    scripts/
+    lib/
         __init__.py
-        cms.py
+        utils.py
 
-Scripts are python code! Python functionality can be placed inside of main.py but please do not do that. Instead put them in scripts/.
+Lib (short for Library) contains python code! Python functionality can be placed inside of main.py but please do not do that. Instead put it in `lib/`.
 
-Presently the only script in this folder is cms.py, which handles turning markdon into HTML. __init__.py isn't actually a script, and instead is simply a [package marker](https://docs.python.org/2/tutorial/modules.html#packages)
+The main file in our library is `utils.py`. Arbitrary python code goes in here, such as a small function for loading files. `__init__.py` is [package marker](https://docs.python.org/2/tutorial/modules.html#packages) and not somewhere you should be putting code (unless you knwo what you are doing).
 
     static/
         css/
