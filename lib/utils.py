@@ -43,3 +43,6 @@ def twitter_id_to_hashtags(tweet_id):
     for entity in tweet['entities']['hashtags']:
         hashtags.append(entity['text'])
     return hashtags
+
+def hashtags_to_search_param(hashtags):
+    return ('#' + ' #'.join(hashtags)).strip()

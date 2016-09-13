@@ -11,3 +11,9 @@ def test_should_turn_twitter_id_into_list_of_hashtags():
     expected_hashtags = ['twitter', 'tweet']
     hashtags = utils.twitter_id_to_hashtags(twitter_id)
     assert hashtags == expected_hashtags
+
+def test_hashtags_to_search_param():
+    hashtags = ['twitter', 'tweet']
+    expected_search = "#twitter #tweet"
+    search = utils.hashtags_to_search_param(hashtags)
+    assert expected_search == search
