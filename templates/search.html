@@ -1,0 +1,10 @@
+{% extends 'partials/base.html' %} {# tells the render what file to use #}
+{% block article %} {# tells there renderer where in the file to put this content #}
+
+
+<form method="post" action="/result">
+    <input type="text" name="search" /><br />
+    <input type="submit" />
+</form>
+
+{% endblock article %}

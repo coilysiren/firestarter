@@ -1,0 +1,8 @@
+{% extends 'partials/base.html' %} {# tells the render what file to use #}
+{% block article %} {# tells there renderer where in the file to put this content #}
+
+{% for tweet in tweets %}
+    <p>{{ tweet }}</p>
+{% endfor %}
+
+{% endblock article %}

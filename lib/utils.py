@@ -46,3 +46,19 @@ def twitter_id_to_hashtags(tweet_id):
 
 def hashtags_to_search_param(hashtags):
     return ('#' + ' #'.join(hashtags)).strip()
+
+def search_results_to_tweets(results):
+    tweets = []
+    for result in results['statuses']:
+        tweets.append( result['text'] )
+    return tweets
+
+def show_user_search_response(user_input):
+    from main import app
+    # could do without the variable definitions ?
+    twitter_id = twitter_url_to_int(user_input)
+    hashtags = twitter_id_to_hashtags(twitter_id)
+    search_param = hashtags_to_search_param(hashtags)
+    results = app.twitter.search(q=search_param)
+    tweets = search_results_to_tweets(results)
+    return tweets

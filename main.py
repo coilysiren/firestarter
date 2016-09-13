@@ -17,6 +17,16 @@ utils.setup(app)
 def index ():
     return flask.render_template('index.html', twitter=app.twitter)
 
+@app.route('/search')
+def search():
+    return flask.render_template('search.html')
+
+@app.route('/result', methods=['POST'])
+def result():
+    tweets = utils.show_user_search_response( flask.request.form['search'] )
+    print(tweets)
+    return flask.render_template('result.html', tweets=tweets)
+
 @app.route('/example')
 def example_route():
     return flask.render_template('partials/base.html',
