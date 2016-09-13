@@ -62,6 +62,5 @@ def page_not_found (e):
 # debug mode start options
 
 if __name__ == '__main__':
-    app.config['DEBUG'] = True
     flask_scss.Scss(app)
-    app.run()
+    app.run(port = app.config.get("PORT", 5000))

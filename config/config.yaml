@@ -14,3 +14,7 @@ URL: "http://lynncyrin.me"
 # Intregrations
 GOOGLE_ANALYTICS_CODE: # inside web-app/templates/analytics.html
 OPENGRAPH: True # inside web-app/templates/head.html
+
+# Settings
+DEBUG: True
+PORT: 5000
