@@ -1,6 +1,4 @@
 body {
-  background-image: url(http://i.imgur.com/TpvU9Gw.jpg);
-  background-size: cover;
 }
 
 .container {
@@ -14,12 +12,9 @@ body {
 }
 
 footer {
-  margin-top: 30px;
-  text-align: left;
-}
-
-form {
-  text-align: center;
+  border-top: 2px rgba(black, 0.3) solid;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 .btn {
@@ -39,12 +34,11 @@ form {
 
 .jumbotron {
   position: relative;
-  text-align: center;
   background-color: rgba(238, 238, 238, 0.99);
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.35);
   padding-top: 18px;
   padding-bottom: 18px;
-  margin-top: 30%;
+  margin-top: 30px;
 }
 .jumbotron h1 {
   font-size: 2em;

@@ -1,51 +1,44 @@
-body {
-  background-image: url(http://i.imgur.com/TpvU9Gw.jpg);
-  background-size: cover; }
+.container {
+  overflow-x: hidden; }
 
-  .container {
-    overflow-x: hidden; }
+  .code-icon {
+    position: absolute;
+    top: 12px;
+    right: 18px; }
 
-    .code-icon {
-      position: absolute;
-      top: 12px;
-      right: 18px; }
+    footer {
+      border-top: 2px rgba(0, 0, 0, 0.3) solid;
+      margin-top: 20px;
+      padding-top: 20px; }
 
-      footer {
-        margin-top: 30px;
-        text-align: left; }
+      .btn {
+        margin-top: 10px;
+        margin-bottom: 10px; }
 
-        form {
-          text-align: center; }
+        .centered {
+          margin-left: auto;
+          margin-right: auto; }
 
-          .btn {
-            margin-top: 10px;
-            margin-bottom: 10px; }
+          .bottom {
+            display: flex;
+            justify-content: center; }
 
-            .centered {
-              margin-left: auto;
-              margin-right: auto; }
+            .jumbotron {
+              position: relative;
+              background-color: rgba(238, 238, 238, 0.99);
+              box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.35);
+              padding-top: 18px;
+              padding-bottom: 18px;
+              margin-top: 30px; }
 
-              .bottom {
-                display: flex;
-                justify-content: center; }
+              .jumbotron h1 {
+                font-size: 2em;
+                margin-bottom: 30px; }
 
-                .jumbotron {
-                  position: relative;
-                  text-align: center;
-                  background-color: rgba(238, 238, 238, 0.99);
-                  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.35);
-                  padding-top: 18px;
-                  padding-bottom: 18px;
-                  margin-top: 30%; }
-
-                  .jumbotron h1 {
-                    font-size: 2em;
-                    margin-bottom: 30px; }
-
-                    @media (max-width: 768px) {
-                      .jumbotron {
-                        margin-left: -20px;
-                        margin-right: -20px;   }
+                @media (max-width: 768px) {
+                  .jumbotron {
+                    margin-left: -20px;
+                    margin-right: -20px;   }
 }
 
 .avatar {
