@@ -4,7 +4,7 @@ Start a flask site really fast!
 
 Like, super fast!!!
 
---- A [@lynncyrin](https://twitter.com/lynncyrin) project. [Source code here](https://github.com/LynnCo/firestarter) ---
+--- A [Lynn Cyrin](http://lynncyrin.me) project. [Source code here](https://github.com/LynnCo/firestarter) ---
 
 ## Base Assumptions
 
