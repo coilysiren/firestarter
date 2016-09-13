@@ -29,6 +29,18 @@ def index ():
 # def index ():
 #     return flask.render_template('index.html')
 
+@app.route('/example')
+def example_route():
+    return flask.render_template('partials/base.html', content='''
+# Example Page
+
+You can create an entire new page be adding content inline here!
+
+You probably shouldn't, but you can.
+
+Syntax is markdown, and the lack of column alignment is on purpose
+    ''')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return flask.render_template('partials/base.html',
@@ -38,6 +50,7 @@ def page_not_found(e):
 def server_error(e):
     return flask.render_template('partials/base.html',
         content='# Error 500\nServer error'), 500
+
 
 if __name__ == '__main__':
     flask_scss.Scss(app, static_dir='static', asset_dir='static')
