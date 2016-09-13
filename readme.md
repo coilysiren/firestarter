@@ -55,7 +55,6 @@ At which point you should see (adjective)(noun).herokuapp.com pop up in your bro
 **Everything beyond this point is out of date**
 
     .venv/
-    config/
     static/
     assets/
     scripts/
@@ -64,14 +63,14 @@ At which point you should see (adjective)(noun).herokuapp.com pop up in your bro
     Procfile
     readme.md
     requirements.txt
+    config.yaml
     .gitignore
 
 Shown above is the top level view of the project. Some of these files and folders you should totally edit, others you should leave alone. I'll point a few out for you.
 
-    config/
-        config.yaml
+    config.yaml
 
-Configurations go in here. Presently the only thing in here is config.yaml which contains sitewide variables. Please do edit this file! If you dont the internet will explode!
+Configurations go in here. Please do edit this file! If you dont the internet will explode!
 
     paths/
         index.md
