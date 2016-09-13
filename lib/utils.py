@@ -35,3 +35,11 @@ def setup(app):
 
 def twitter_url_to_int(url):
     return int(url.split('/')[-1])
+
+def twitter_id_to_hashtags(tweet_id):
+    from main import app
+    tweet = app.twitter.show_status(id=tweet_id)
+    hashtags = []
+    for entity in tweet['entities']['hashtags']:
+        hashtags.append(entity['text'])
+    return hashtags
