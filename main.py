@@ -14,6 +14,7 @@ import glob
 import yaml
 import flask
 import flask_scss
+import flask_misaka
 # custom
 from scripts import cms
 
@@ -51,4 +52,5 @@ def dynamic_path(path):
 
 if __name__ == '__main__':
     flask_scss.Scss(app)
+    flask_misaka.Misaka(app)
     app.run(port = app.config.get("PORT", 5000))
