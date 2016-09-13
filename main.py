@@ -49,11 +49,6 @@ def dynamic_path(path):
     if len(glob.glob('paths/'+path+'*')) == 0: return page_not_found(404)
     return render('post.html', html_content=build("paths/"+path))
 
-# 404 is special because it needs @app.errorhandler(404)
-@app.errorhandler(404)
-def page_not_found (e):
-    return render('post.html', html_content=build("paths/404"))
-
 if __name__ == '__main__':
     flask_scss.Scss(app)
     app.run(port = app.config.get("PORT", 5000))
