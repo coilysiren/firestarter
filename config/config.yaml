@@ -8,8 +8,9 @@ AVATAR_DESC: "my picture"
 
 # name, description, and url of website
 SITENAME: "FireStarter"
-DESC: "Start a flask site really fast! Like, super fast!!!"
+DESC: "FireStarter, a Lynn Cyrin website"
 URL: "http://lynncyrin.me"
+SOURCE: "https://github.com/lynnco/firestarter"
 
 # Integrations
 GOOGLE_ANALYTICS_CODE: # inside web-app/templates/analytics.html
