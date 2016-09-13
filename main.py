@@ -29,7 +29,8 @@ def index ():
 
 @app.route('/example')
 def example_route():
-    return flask.render_template('partials/base.html', content='''
+    return flask.render_template('partials/base.html',
+        content='''
 # Example Page
 
 You can create an entire new page be adding content inline here!
