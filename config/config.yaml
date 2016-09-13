@@ -11,7 +11,7 @@ SITENAME: "FireStarter"
 DESC: "Start a flask site really fast! Like, super fast!!!"
 URL: "http://lynncyrin.me"
 
-# Intregrations
+# Integrations
 GOOGLE_ANALYTICS_CODE: # inside web-app/templates/analytics.html
 OPENGRAPH: True # inside web-app/templates/head.html
 
