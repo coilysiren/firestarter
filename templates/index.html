@@ -1,0 +1,16 @@
+{% extends 'partials/base.html' %} {# tells the render what file to use #}
+{% block article %} {# tells there renderer where in the file to put this content #}
+{% filter markdown %} {# turns the following content into markdown #}
+
+# Index Page !
+
+premium website frontpage content goes here~
+
+maybe some words about how much you like cats???
+
+here is a random cat:
+
+![cat picture!](http://thecatapi.com/api/images/get?size=small)
+
+{% endfilter %}
+{% endblock article %}

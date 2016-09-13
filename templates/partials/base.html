@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- base.html -->
+<html class="js" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+    <head>
+		{% block head %}{% include 'partials/head.html' %}{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+        <main class='container'>
+          <div class='row'>
+            <div class='col-lg-offset-2 col-lg-8'>
+              <article class='jumbotron'>
+                <div class='top'>
+                  {% if config.SOURCE %}
+                  <a class='close code-icon' href='{{ config.SOURCE }}' title='source code'>
+                    <i class='fa fa-code'></i>
+                  </a>
+                  {% endif %}
+                </div>
+
+                {% block article %}{{ content|markdown }}{% endblock %}
+                <footer>{{ config.DESC }}</footer>
+              </article>
+            </div>
+          </div>
+        </main>
+        {% endblock body %}
+    </body>
+    {% include 'partials/footer.html' %}
+</html>
