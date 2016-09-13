@@ -1,6 +1,21 @@
 {% extends "base.html" %}
 	{% block content %}
-		<main class='post'><article class='post'>
-                {% autoescape false %}{{ html_content }}{% endautoescape %}
-        </article></main>
+    <main class='container'>
+      <div class='row'>
+        <div class='col-lg-offset-2 col-lg-8'>
+          <article class='jumbotron'>
+            <div class='top'>
+              {% if config.SOURCE %}
+              <a class='close code-icon' href='{{ config.SOURCE }}' title='source code'>
+                <i class='fa fa-code'></i>
+              </a>
+              {% endif %}
+            </div>
+
+            {% autoescape false %}{{ html_content }}{% endautoescape %}
+            <footer>{{ config.DESC }}</footer>
+          </article>
+        </div>
+      </div>
+    </main>
 	{% endblock %}
