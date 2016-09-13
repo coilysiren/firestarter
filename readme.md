@@ -14,7 +14,7 @@ This text assumes:
 * awareness of the uses of [git](http://git-scm.com/)
 * the desire to make a website / web-app
 * and **requires** you have installed:
-    * [python 2.7 or 3.4](https://www.python.org/)
+    * [python](https://www.python.org/)
     * [git](http://git-scm.com/)
     * [pip](https://pip.pypa.io/en/latest/installing.html)
     * [virtualenv](https://virtualenv.pypa.io/en/latest/virtualenv.html) (which can be obtained via `$ pip install virtualenv`)
@@ -28,8 +28,11 @@ First you obtain the code by running on command line
 
 Then install the packages that the project depeneds on. Right before you install the packages though, you should (but are not required to) initialize a virtualenv(ironment) and start it. Then you use pip to install all the project requirements.
 
-    $ virtualenv venv
-    $ start-venv
+    # pyenv on OSX
+    $ echo "3.4" > .python-version
+
+    $ virtualenv .venv --python=python3.4
+    $ source .venv/bin/activate
     $ pip install -r requirements.txt
 
 At which point, you can now run the website!
@@ -49,7 +52,7 @@ At which point you should see (adjective)(noun).herokuapp.com pop up in your bro
 
 ## Advanced tactics: Project Structure
 
-    venv/
+    .venv/
     config/
     static/
     assets/
