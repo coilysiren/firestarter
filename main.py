@@ -45,7 +45,7 @@ def index ():
 # ex: website.com/cats -> firestarter/paths/cats
 @app.route('/<path>')
 def dynamic_path(path):
-    # frist check that path is empty, if so then 404
+    # first check that path is empty, if so then 404
     if len(glob.glob('paths/'+path+'*')) == 0: return page_not_found(404)
     return flask.render_template('post.html', html_content=build("paths/"+path))
 
