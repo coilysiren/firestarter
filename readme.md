@@ -48,37 +48,40 @@ Now if you want to turn this into something live on the internet that other peop
     $ git push heroku
     $ heroku open
 
-At which point you should see (adjective)(noun).herokuapp.com pop up in your browser and display... this readme! Hopefully!!! Because if so that then that means you are now the proud owner of a website on the internet - even if that website is simply a guide on how to make this website ~
+At which point you should see `(adjective)(noun).herokuapp.com` pop up in your browser and display... this readme! Hopefully!!! Because if so that then that means you are now the proud owner of a website on the internet - even if that website is simply a guide on how to make this website ~
 
 ## Advanced tactics: Project Structure
 
-**Everything beyond this point is out of date**
-
-    .venv/
-    static/
-    assets/
-    scripts/
     templates/
-    main.py
-    Procfile
-    readme.md
+    static/
+    .venv/
+    lib/
     requirements.txt
     config.yaml
     .gitignore
+    readme.md
+    Procfile
+    main.py
+    .env
 
-Shown above is the top level view of the project. Some of these files and folders you should totally edit, others you should leave alone. I'll point a few out for you.
+Shown above is the top level view of the project. Some of these files and folders you'll be editing regularly, others you'll be leaving alone. I'll point a few out for you.
 
     config.yaml
+    .env
+    .gitignore
 
-Configurations go in here. Please do edit this file! If you dont the internet will explode!
+`config.yaml` holds basic site-wide configuration and data. So things like the website's name, URL, what port it runs on, etc. [Here](http://docs.ansible.com/ansible/YAMLSyntax.html) is a reference for yaml's syntax.
 
-    paths/
-        index.md
-        404.md
+`.env` holds advanced, private configuration. Things like your database connection keys, account passwords. This information should **never** be public, or stored in git, which is why this file is paired with `.gitignore`. `.gitignore` makes it so that git will not track your file, resulting in you accidentally publishing your passwords on the internet. [python-dotenv](https://github.com/theskumar/python-dotenv) goes into a bit more detail about `.env` files.
 
-[Markdown (.md)](http://daringfireball.net/projects/markdown/) and HTML (.html) files in the paths folder get turned into a URL for your wonderful website viewing audience. The URL does not contain the file extension. So putting a file called 'about.md' into the paths/ folder results in the contents of that file being displayed at your_website.com/about
+Due to it being secret, the `.env` file won't exist when you copy the repo. You might also need to dig a little bit (eg. `show hidden files` or `ls -a`) to see it once it does exist.
 
-404 and index are in here as examples!
+    .venv
+    requirements.txt
+
+`.venv` holds the [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/) for this project. It's a small python installation that lives inside your project folder.
+
+`requirements.txt` is for telling pip what packages to install inside this virtual env(ironment).
 
     lib/
         __init__.py
@@ -86,29 +89,47 @@ Configurations go in here. Please do edit this file! If you dont the internet wi
 
 Lib (short for Library) contains python code! Python functionality can be placed inside of main.py but please do not do that. Instead put it in `lib/`.
 
-The main file in our library is `utils.py`. Arbitrary python code goes in here, such as a small function for loading files. `__init__.py` is [package marker](https://docs.python.org/2/tutorial/modules.html#packages) and not somewhere you should be putting code (unless you knwo what you are doing).
+The main file in our library is `utils.py`. Arbitrary python code goes in here, such as a small function for loading files. `__init__.py` is [package marker](https://docs.python.org/2/tutorial/modules.html#packages) and not somewhere you should be putting code (unless you know what you are doing).
+
+Scripts in the `lib` folder can be as small as two lines that print out *"Hello World"* and as large as a class that performs and graphs fourier transforms.
 
     static/
+        scss/
         css/
-            main.css
         js/
-            main.js
+        img/
+        fonts/
 
-Static files are viewable to the whole world, so do not put bank_account_info.txt in here. Presentially it contains main.css and main.js. main.js is empty because your friendly tutorial writer does not enjoy writing js. Then there is main.css which is compiled from main.scss (explained below). So there isn't really anything to do with the static/ folder.
+Static files are viewable to the whole world, so do not put `txt/bank_account_info.txt` in here. Static folders can contain all sorts of things, but as a website builder you will mainly use them for css and javascript.
 
-    assets/
-        main.scss
+The `scss/` folder contains a [css preprocessor](http://sass-lang.com/), which I use because I tend to prefer it over directly writing css. The contents of the `scss/` folder are run through a converter and placed into `css/`. There are also css libraries such as [bootstrap](http://getbootstrap.com/) in the `css/` folder.
 
-Assets contains things that build into static files. Presently the only thing in here is a single [Sass](http://sass-lang.com/) file but you can have as many as you want. [Coffeescript](http://coffeescript.org/) can go in here also, assuming you have a processor for it. Sass is great and you should learn it because it makes css TONS more reasonable.
+The `js/` folder mimics the `css/` folder ... or it would if your friendly tutorial writer did not have such an aversion to javascript.
+
+`img/` and `fonts/` contain what you would expect.
 
     templates/
-        analytics.html
-        base.html
-        head.html
-        nav.html
-        post.html
+        partials/
+            base.html
+            head.html
+            footer.html
+        index.html
 
-The templates folder contains templates (!), which are the building blocks of your website. Templates are a bit too complex for a quirky short description, so you should read about them on [Jinja's website](http://jinja.pocoo.org/docs/templates/). For the purpose of small projects, you can probably get away with not editing the templates much.
+The templates folder contains templates (!), which are the building blocks of your website. The templating language is [jinja2](http://jinja.pocoo.org/docs/templates/), which builds into HTML.
+
+In addition to jinja, the template files can contain [Markdown](http://daringfireball.net/projects/markdown/). `templates/index.html` shows an in use example of a template that renders markdown. This readme is also written in markdown!
+
+The `templates/partials/` contains re-usable parts of your website - such as a navigation bar that would be present on every page.
+
+The "base" templates directory (ie. where `templates/index.html`) lives is usually where I put "endpoint" templates. That is, the primary templates you point to in order to render a page, such as `about.html`, `contact.html`, etc.
+
+    Procfile
+
+The `Procfile` (which purposefully has no file extension) is used by [Heroku](https://devcenter.heroku.com/articles/procfile) to help run your website on a serious mode server. The commands in your `Procfile` are what Heroku will use to run your application, and generally `$ python main.py` is what you will be using.
+
+    readme.md
+
+You're reading it!
 
 ## Stretch Goals: What to do with your new website?
 
