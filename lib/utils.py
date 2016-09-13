@@ -32,3 +32,6 @@ def setup(app):
         ENV["access_token"],
         ENV["access_token_secret"]
     )
+
+def twitter_url_to_int(url):
+    return int(url.split('/')[-1])
