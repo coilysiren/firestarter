@@ -1,44 +1,51 @@
-.container {
-  overflow-x: hidden; }
+body {
+  font-size: 18px; }
 
-  .code-icon {
-    position: absolute;
-    top: 12px;
-    right: 18px; }
+  h1, h2, h3, h4, h5 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600; }
 
-    footer {
-      border-top: 2px rgba(0, 0, 0, 0.3) solid;
-      margin-top: 20px;
-      padding-top: 20px; }
+    .container {
+      overflow-x: hidden; }
 
-      .btn {
-        margin-top: 10px;
-        margin-bottom: 10px; }
+      .code-icon {
+        position: absolute;
+        top: 12px;
+        right: 18px; }
 
-        .centered {
-          margin-left: auto;
-          margin-right: auto; }
+        footer {
+          border-top: 2px rgba(0, 0, 0, 0.3) solid;
+          margin-top: 20px;
+          padding-top: 20px; }
 
-          .bottom {
-            display: flex;
-            justify-content: center; }
+          .btn {
+            margin-top: 10px;
+            margin-bottom: 10px; }
 
-            .jumbotron {
-              position: relative;
-              background-color: rgba(238, 238, 238, 0.99);
-              box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.35);
-              padding-top: 18px;
-              padding-bottom: 18px;
-              margin-top: 30px; }
+            .centered {
+              margin-left: auto;
+              margin-right: auto; }
 
-              .jumbotron h1 {
-                font-size: 2em;
-                margin-bottom: 30px; }
+              .bottom {
+                display: flex;
+                justify-content: center; }
 
-                @media (max-width: 768px) {
-                  .jumbotron {
-                    margin-left: -20px;
-                    margin-right: -20px;   }
+                article.jumbotron {
+                  position: relative;
+                  background-color: rgba(238, 238, 238, 0.99);
+                  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.35);
+                  padding-top: 18px;
+                  padding-bottom: 18px;
+                  margin-top: 30px;
+                  line-height: 1.5em; }
+                  article.jumbotron p {
+                    font-weight: normal;
+                    font-size: inherit; }
+                    @media (max-width: 768px) {
+                      article.jumbotron {
+                        margin-left: -20px;
+                        margin-right: -20px;   }
 }
 
 .avatar {

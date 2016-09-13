@@ -1,4 +1,11 @@
 body {
+  font-size: 18px;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .container {
@@ -32,23 +39,26 @@ footer {
   justify-content: center;
 }
 
-.jumbotron {
+article.jumbotron {
   position: relative;
   background-color: rgba(238, 238, 238, 0.99);
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.35);
   padding-top: 18px;
   padding-bottom: 18px;
   margin-top: 30px;
-}
-.jumbotron h1 {
-  font-size: 2em;
-  margin-bottom: 30px;
-}
-@media (max-width: 768px) {
-  .jumbotron {
-    margin-left: -20px;
-    margin-right: -20px;
+
+  line-height: 1.5em;
+
+  p {
+    font-weight: normal;
+    font-size: inherit;
   }
+
+  @media (max-width: 768px) {
+      margin-left: -20px;
+      margin-right: -20px;
+  }
+
 }
 
 .avatar {

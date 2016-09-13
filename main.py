@@ -8,7 +8,7 @@ import flask_misaka
 
 
 # start app and set configuration
-app = flask.Flask(__name__, static_folder='static', static_url_path='/static')
+app = flask.Flask(__name__, static_folder='static', static_url_path='/static', )
 app.config.from_object(__name__)
 with open('config.yaml','r') as config_file:
     for key, value in yaml.load(config_file).items():
@@ -31,6 +31,6 @@ def index ():
 
 
 if __name__ == '__main__':
-    flask_scss.Scss(app)
+    flask_scss.Scss(app, static_dir='static', asset_dir='static')
     flask_misaka.Misaka(app)
     app.run(port = app.config.get("PORT", 5000))
