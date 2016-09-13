@@ -88,7 +88,7 @@ Due to it being secret, the `.env` file won't exist when you copy the repo. You 
         __init__.py
         utils.py
 
-Lib (short for Library) contains python code! Python functionality can be placed inside of main.py but please do not do that. Instead put it in `lib/`.
+The lib(rary) contains python code! Python functionality can be placed inside of main.py but please do not do that. Instead put it in `lib/`.
 
 The main file in our library is `utils.py`. Arbitrary python code goes in here, such as a small function for loading files. `__init__.py` is [package marker](https://docs.python.org/2/tutorial/modules.html#packages) and not somewhere you should be putting code (unless you know what you are doing).
 
