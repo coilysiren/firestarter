@@ -1,13 +1,3 @@
-'''
-__name__ = main.py
-__desc__ = Routing and content generation file
-__sign__ = Lynn Cyrin
-
-Use:
-[Production] '$ foreman start'
-[Developement] '$ python main.py' (runs in debug mode)
-'''
-
 # builtin
 import glob
 # external
