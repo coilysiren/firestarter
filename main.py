@@ -24,8 +24,9 @@ build = cms.build_html
 # start app and set configuration
 app = flask.Flask(__name__, static_folder='static', static_url_path='')
 app.config.from_object(__name__)
-for key, value in yaml.load(file('config/config.yaml','r')).items():
-    app.config[key] = value
+with open('config/config.yaml','r') as config_file:
+    for key, value in yaml.load(config_file).items():
+        app.config[key] = value
 
 # Views! i.e. what the user gets when they type in our url
 
