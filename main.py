@@ -1,18 +1,14 @@
 # builtin
 import glob
 # external
-import yaml
 import flask
-import flask_scss
-import flask_misaka
 # local
 from lib import utils
 
 
 # start app and set configuration
 app = flask.Flask(__name__, static_folder='static', static_url_path='/static', )
-with open('config.yaml','r') as config_file:
-    app.config.update( yaml.load( config_file ) )
+utils.setup(app)
 
 
 # Views! i.e. what the user gets when they type in our url
@@ -53,6 +49,4 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    flask_scss.Scss(app, static_dir='static', asset_dir='static')
-    flask_misaka.Misaka(app)
     app.run(port = app.config.get("PORT", 5000))
