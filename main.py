@@ -12,6 +12,7 @@ app = flask.Flask(__name__, static_folder='static', static_url_path='/static', )
 with open('config.yaml','r') as config_file:
     app.config.update( yaml.load( config_file ) )
 
+
 # Views! i.e. what the user gets when they type in our url
 
 # this renders the readme as the index page...
