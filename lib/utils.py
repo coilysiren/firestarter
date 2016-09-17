@@ -3,7 +3,7 @@ import yaml
 import dotenv
 import flask_misaka
 import flask_scss
-
+import flask_cache
 
 def read_file(file_name):
     with open(file_name, 'r') as readme_file:
@@ -21,3 +21,4 @@ def setup(app):
     # extensions
     flask_misaka.Misaka(app)
     flask_scss.Scss(app, static_dir='static', asset_dir='static')
+    flask_cache.Cache(app, config={'CACHE_TYPE': 'simple'})
