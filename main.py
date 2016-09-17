@@ -13,16 +13,9 @@ utils.setup(app)
 
 # Views! i.e. what the user gets when they type in our url
 
-# this renders the readme as the index page...
 @app.route('/')
 def index ():
-    return flask.render_template('partials/base.html',
-        content=utils.read_file("readme.md"))
-
-# ...but this is the index page view you probably want
-# @app.route('/')
-# def index ():
-#     return flask.render_template('index.html')
+    return flask.render_template('index.html')
 
 @app.route('/example')
 def example_route():
