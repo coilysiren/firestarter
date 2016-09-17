@@ -1,8 +1,8 @@
 # builtin
 import os
 import itertools
-from os import environ as ENV
 # external
+import bs4
 import yaml
 import dotenv
 import flask_scss
@@ -10,9 +10,7 @@ import flask_cache
 import flask_misaka
 
 
-# private configs, from .env
 dotenv.load_dotenv( dotenv.find_dotenv() )
-# set base directory
 base_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..')
 
 
@@ -42,26 +40,6 @@ def wait_for_tag_load(browser, element):
         else:
             time.sleep(0.1)
 
-def login_and_get_table():
-    with splinter.Browser('phantomjs') as browser:
-        try:
-            # login
-            browser.driver.set_window_size(1366,768)
-            browser.visit('https://iwantclips.com/login/fancy_login')
-            wait_for_tag_load(browser, 'form')
-            browser.fill('email', ENV['IWC_USER'])
-            browser.fill('password', ENV['IWC_PASS'])
-            browser.find_by_name('submit').click()
-            # get the content table
-            browser.visit('https://iwantclips.com/model/content_store')
-            wait_for_tag_load(browser, 'tbody')
-            content = browser.find_by_tag('tbody')[0].html
-            print(content)
-            return content
-        except Exception as e:
-            browser.driver.save_screenshot('error.png')
-            raise
-
 def table_html_to_dict(table_str):
     soup = bs4.BeautifulSoup(table_str, 'html.parser')
     table_dict = {}
@@ -80,7 +58,7 @@ def table_html_to_dict(table_str):
         }
     return table_dict
 
-def merge_table_with_local_data(path, table):
+def merge_table_with_local_data(table):
     path = os.path.join(base_dir, 'data/shoot_percents.yaml')
     with open(path, 'r') as yaml_file:
         shoot_data = yaml.load(yaml_file)
@@ -135,7 +113,9 @@ def get_worker_earnings(table):
     return table
 
 def populate_shoot_table():
-    table = login_and_get_table()
+    path = os.path.join(base_dir, 'data/IWC.txt')
+    with open(path, 'r') as table_file:
+        table = table_file.read()
 
     table = table_html_to_dict(table)
     table = merge_table_with_local_data(table)
