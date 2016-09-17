@@ -8,10 +8,14 @@ from lib import utils
 
 # start app and set configuration
 app = flask.Flask(__name__, static_folder='static', static_url_path='/static', )
-utils.setup(app)
-
+cache = utils.setup(app)
 
 # Views! i.e. what the user gets when they type in our url
+
+@app.route('/sales')
+@cache.cached(timeout=84600)
+def sales():
+    return flask.render_template('sales.html', table=utils.populate_shoot_table())
 
 @app.route('/')
 def index ():

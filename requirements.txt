@@ -6,5 +6,5 @@ Flask-Misaka
 python-dotenv
 cryptography
 beautifulsoup4
-requests
 flask-cache
+splinter
