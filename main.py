@@ -8,21 +8,18 @@ from lib import utils
 
 # start app and set configuration
 app = flask.Flask(__name__, static_folder='static', static_url_path='/static', )
-utils.setup(app)
-
+cache = utils.setup(app)
 
 # Views! i.e. what the user gets when they type in our url
 
-# this renders the readme as the index page...
+@app.route('/sales')
+@cache.cached(timeout=84600)
+def sales():
+    return flask.render_template('sales.html', table=utils.populate_shoot_table())
+
 @app.route('/')
 def index ():
-    return flask.render_template('partials/base.html',
-        content=utils.read_file("readme.md"))
-
-# ...but this is the index page view you probably want
-# @app.route('/')
-# def index ():
-#     return flask.render_template('index.html')
+    return flask.render_template('index.html')
 
 @app.route('/example')
 def example_route():
