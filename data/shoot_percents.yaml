@@ -17,35 +17,62 @@ Drea, Ophelia, Cyrin Threesome:
     Performer: 50%
     QAPC: 30%
   Workers:
-    Name: [Role 1, Role 2]
+    Cyrin: [Performer]
+    Ophelia: [Performer]
+    Drea: [Performer]
 
 Game On:
   Roles:
     Performer: 50%
     QAPC: 30%
+    Editor:
+    Director:
+    Videographer:
   Workers:
-    Name: [Role 1, Role 2]
+    Cyrin: [Performer]
+    Ophelia: [Performer, Editor]
+    Nic: [Director, Videographer]
 
 Game On Blowjob:
   Roles:
     Performer: 50%
     QAPC: 30%
+    Editor:
+    Director: 
+    Videographer
   Workers:
-    Name: [Role 1, Role 2]
+    Cyrin: [Performer]
+    Ophelia: [Performer, Editor]
+    Nic: [Director, Videographer]
 
 Mel Cox and Cyrin Song:
   Roles:
     Performer: 50%
     QAPC: 30%
+    Editor: 
+    Videographer:
   Workers:
-    Name: [Role 1, Role 2]
+    Mel: [Performer]
+    Cyrin: [Perfpormer]
+    Ophelia: [Editor, Videographer]
 
 Pajamajam Party:
   Roles:
-    Performer: 50%
     QAPC: 30%
+    Videographer: 5%
+    Studio: 5%
+    Editor: 5%
+    Director 1: 5%
+    Director 2: 5%
+    Director 3: 5%
+    Performer: 5%
   Workers:
-    Name: [Role 1, Role 2]
+    Cyrin: [Performer, Director 1]
+    Ophelia: [Performer, Director 2, Editor]
+    Nic: [Performer, Director 3]
+    Drea: [Performer]
+    Zander: [Videographer, Studio]
+    Mischa: [Performer
 
 Shoot Title:
   Roles:
